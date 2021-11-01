@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.app_devs.stackoverflow.adpaters.QuestionsAdapter
 import com.app_devs.stackoverflow.databinding.ActivityMainBinding
 import com.app_devs.stackoverflow.viewmodel.MainActivityViewModel
 
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mViewModel:MainActivityViewModel
     private lateinit var mAdapter: QuestionsAdapter
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
@@ -34,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         })
         mViewModel.getQuestions()
     }
+
     private fun initRecyclerView()
     {
         binding.rvQuestions.apply {
